@@ -1,0 +1,19 @@
+@import 'style.scss';
+@import 'footer.scss';
+* {
+  margin: 0;
+  padding: 0;
+}
+html,body{
+  height: 100%;
+}
+img {
+  display: block;
+}
+a {
+  text-decoration: underline;
+}
+ol,ul li {
+  list-style: none;
+}
+

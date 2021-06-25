@@ -1,0 +1,93 @@
+/* variables */
+$flex: flex;
+
+/* @function */
+@function cpt-width($width,$num){
+  @return $width / $num 
+}
+
+// --------------------------------------------------------------------------------
+
+
+/* absolute */ 
+.ab-pos {
+  position: absolute;
+}
+// ab-l-t
+.ab-l-t{
+  @extend .ab-pos;
+  left: 0;
+  top: 0;
+}
+//ab-l-b
+.ab-l-b{
+  @extend .ab-pos;
+  left: 0;
+  bottom: 0;
+}
+//ab-r-t
+.ab-r-t{
+  @extend .ab-pos;
+  right: 0;
+  top: 0;
+}
+//ab-r-b
+.ab-r-b{
+  @extend .ab-pos;
+  right: 0;
+  bottom: 0;
+}
+
+/* flex */
+@mixin flex-drt-r {
+  display: $flex;
+  flex-direction: row;
+}
+@mixin flex-drt-c{
+  display: $flex;
+  flex-direction: column;
+}
+/* 横向排列方式 */
+@mixin flex-drt-r-space-btn {
+  @include flex-drt-r;
+  justify-content: space-between;
+}
+@mixin flex-drt-r-ctr{
+  @include flex-drt-r;
+  justify-content: center;
+}
+@mixin flex-drt-r-space-aud{
+  @include flex-drt-r;
+  justify-content: space-around;
+}
+/* 纵向排列方式 */
+@mixin flex-drt-c-space-btn {
+  @include flex-drt-c;
+  justify-content: space-between;
+}
+@mixin flex-drt-c-ctr{
+  @include flex-drt-c;
+  justify-content: center;
+}
+@mixin flex-drt-c-space-aud{
+  @include flex-drt-c;
+  justify-content: space-around;
+}
+
+//------------------------------------------------------------------
+
+/* defined ab-center flex-center flex-column-center */ 
+.ab-ctr {
+  @extend .ab-l-t;
+  @extend .ab-r-b;
+  margin: auto;
+}
+.flex-ctr {
+  @include flex-drt-r-ctr;
+  align-items: center;
+}
+.flex-cln-ctr{
+  @include flex-drt-c-ctr;
+  align-items: center;
+}
+
